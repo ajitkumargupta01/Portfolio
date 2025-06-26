@@ -1,5 +1,8 @@
-# Use an official Nginx image to serve static files
+# Use Nginx image
 FROM nginx:alpine
 
-# Copy all files to the Nginx web directory
+# Remove default Nginx web page
+RUN rm -rf /usr/share/nginx/html/*
+
+# Copy your portfolio files into Nginx web directory
 COPY . /usr/share/nginx/html
